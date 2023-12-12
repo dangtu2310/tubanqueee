@@ -17,6 +17,7 @@ const loginUser = async (userData) => {
 
         if (response.ok) {
             localStorage.setItem('username', data.username);
+            console.log(data);
 
         } else {
             const data = await response.json();
