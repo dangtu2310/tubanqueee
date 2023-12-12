@@ -14,7 +14,7 @@ export const Header = () => {
     if (storedUsername) {
       setIsLoggedIn(true);
     }
-  }, [isLoggedIn]);
+  }, []);
   const [isOpen, setOpen] = useState(false);
 
   return (
