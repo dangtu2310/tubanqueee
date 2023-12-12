@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 const Login = () => {
-        const history = useHistory();
+    const router = useRouter();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,7 +22,7 @@ const loginUser = async (userData) => {
             const data = await response.json(); 
             
             localStorage.setItem('username', data.data.username);
-history.push('/');
+ router.push('/');
         } else {
             const data = await response.json();
             console.error('Error during login:', data.message);
