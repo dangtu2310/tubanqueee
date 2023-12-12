@@ -1,4 +1,4 @@
-import User from "../../database/model/User";
+import User from "../../database/model/user";
 import connectDB from '../../database/db';
 connectDB();
 
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
             }
 
             // Successfully logged in
-            res.status(200).json({ message: 'Login successful' });
+            res.status(200).json({ message: 'Login successful',data:user });
         } catch (error) {
             console.error('Error during login:', error);
             res.status(500).json({ message: 'Internal Server Error' });
