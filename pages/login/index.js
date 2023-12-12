@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+        const history = useHistory();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 // Your login function in a React component
@@ -19,6 +22,7 @@ const loginUser = async (userData) => {
             const data = await response.json(); 
             
             localStorage.setItem('username', data.data.username);
+history.push('/');
         } else {
             const data = await response.json();
             console.error('Error during login:', data.message);
